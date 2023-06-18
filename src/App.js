@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
+import AjouterDocument from './AjouterDocument';
+import { BrowserRouter,Routes , Route} from 'react-router-dom';
+import Webcamera from './Webcamera';
 import './App.css';
+import UploadFile from './UploadFile';
+import DossierVertStructure from './DossierVertStructure';
+// import { BrowserRouter as Router, useLocation, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<AjouterDocument/>} />
+          <Route path="/Webcamera" element={<Webcamera />} />
+          <Route path="/UploadFile" element={<UploadFile />} />
+        </Routes>
+      </BrowserRouter>
+
+    {/* <Router>
+      <DossierVertStructure />
+    </Router> */}
     </div>
   );
 }
